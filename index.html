@@ -3,73 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marketing – Brand/Content Design | Andrew Day-Jones</title>
+  <title>Freelance Marketing – Andrew Day-Jones</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS Animation Library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    section {
-      scroll-margin-top: 5rem; /* offset for anchor links */
-    }
+    html { scroll-behavior: smooth; }
+    section { scroll-margin-top: 5rem; }
+    /* Custom colors */
+    .forest-green { color: #2F4F2F; }
+    .bg-forest-green { background-color: #2F4F2F; }
+    .brown { color: #8B5E3C; }
+    .bg-brown { background-color: #8B5E3C; }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans relative">
 
   <!-- Hero Section -->
   <section id="home" class="relative min-h-[55vh] md:min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-    <!-- Subtle background accent -->
-    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-72 h-72 bg-black opacity-5 rounded-full -z-10"></div>
-
-    <h1 class="text-2xl sm:text-3xl md:text-6xl font-bold mb-3 sm:mb-4 mt-8 sm:mt-10 md:mt-20">
-      Andrew Day-Jones
-    </h1>
-    <p class="text-sm sm:text-base md:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-xl">
-      Freelance Digital Marketer & Brand/Content Designer from Auckland, New Zealand
-    </p>
-    <a href="#contact" class="px-6 py-3 bg-black text-white rounded-full text-lg hover:bg-gray-800 transition transform hover:scale-105">
+    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-72 h-72 bg-forest-green opacity-5 rounded-full -z-10"></div>
+    <h1 class="text-2xl sm:text-3xl md:text-6xl font-bold mb-3 sm:mb-4 mt-8 sm:mt-10 md:mt-20">Andrew Day-Jones</h1>
+    <p class="text-sm sm:text-base md:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-xl">Freelance Digital Marketer & Brand/Content Designer from Auckland, New Zealand</p>
+    <a href="#contact" class="px-6 py-3 bg-brown text-white rounded-full text-lg hover:bg-forest-green transition transform hover:scale-105">
       Say Hi 👋
     </a>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="max-w-4xl mx-auto px-6 py-16">
-    <h2 class="text-3xl font-bold mb-6 text-center md:text-left">About Me</h2>
+  <section id="about" class="max-w-4xl mx-auto px-6 py-16" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-6 text-center md:text-left forest-green">About Me</h2>
     <div class="text-lg text-gray-700 leading-relaxed space-y-6">
-      <p class="border-l-4 border-black pl-4">
+      <p class="border-l-4 border-forest-green pl-4">
         With over 7 years in digital marketing and design, I’ve worked across New Zealand’s retail landscape, 
-        including brands like <span class="font-semibold">Huffer</span> and <span class="font-semibold">Sunglass Style</span>.
+        including brands like <span class="font-semibold brown">Huffer</span> and <span class="font-semibold brown">Sunglass Style</span>.
       </p>
-      <p class="border-l-4 border-black pl-4">
+      <p class="border-l-4 border-forest-green pl-4">
         My focus is on creating marketing strategies that drive results while pairing them with engaging design. 
         After two years as a full-time stay-at-home dad, I’m back freelancing from Devonport, Auckland with a fresh 
         perspective and sharp design instincts.
       </p>
-      <p class="border-l-4 border-black pl-4">
+      <p class="border-l-4 border-forest-green pl-4">
         I’m also the founder of 
-        <a href="https://www.instagram.com/milesrunclub/" target="_blank" class="font-semibold text-black hover:text-gray-700 hover:underline transition">
+        <a href="https://www.instagram.com/milesrunclub/" target="_blank" class="font-semibold text-brown hover:text-forest-green hover:underline transition">
           @milesrunclub
-        </a>, a platform that explores the intersection 
-        of running culture and style, and New Zealand’s leading niche account in this space.
+        </a>, a platform that explores the intersection of running culture and style, and New Zealand’s leading niche account in this space.
       </p>
     </div>
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="bg-white py-16">
+  <section id="skills" class="bg-white py-16" data-aos="fade-up" data-aos-delay="100">
     <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-10 text-center">What I Do</h2>
+      <h2 class="text-3xl font-bold mb-10 text-center forest-green">What I Do</h2>
       <div class="grid md:grid-cols-3 gap-10">
         <div class="p-6 bg-gray-100 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition transform">
-          <h3 class="text-xl font-semibold mb-2">Marketing Strategy</h3>
+          <h3 class="text-xl font-semibold mb-2 brown">Marketing Strategy</h3>
           <p class="text-gray-600">Building campaigns that connect with audiences and deliver measurable impact.</p>
         </div>
         <div class="p-6 bg-gray-100 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition transform">
-          <h3 class="text-xl font-semibold mb-2">Social Media & Ads</h3>
+          <h3 class="text-xl font-semibold mb-2 brown">Social Media & Ads</h3>
           <p class="text-gray-600">From organic growth to paid campaigns, I help brands thrive online.</p>
         </div>
         <div class="p-6 bg-gray-100 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition transform">
-          <h3 class="text-xl font-semibold mb-2">Graphic Design</h3>
+          <h3 class="text-xl font-semibold mb-2 brown">Graphic Design</h3>
           <p class="text-gray-600">Crafting visuals that align with brand identity and captivate audiences.</p>
         </div>
       </div>
@@ -77,48 +74,41 @@
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="max-w-6xl mx-auto px-6 py-20">
-    <h2 class="text-3xl font-bold mb-12 text-center">Latest Projects</h2>
+  <section id="projects" class="max-w-6xl mx-auto px-6 py-20" data-aos="fade-up" data-aos-delay="200">
+    <h2 class="text-3xl font-bold mb-12 text-center forest-green">Latest Projects</h2>
     <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-      
       <!-- Miles -->
       <div class="bg-white rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition transform overflow-hidden relative">
-        <img src="images/miles.jpg" alt="Miles Run Club" 
-             class="w-full aspect-square object-cover transform transition duration-300 hover:scale-105" loading="lazy">
+        <img src="images/miles.jpg" alt="Miles Run Club" class="w-full aspect-square object-cover transform transition duration-300 hover:scale-105" loading="lazy">
         <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">Miles</h3>
-          <p class="text-gray-600 mb-4">Founder of @milesrunclub, a platform exploring the intersection of running culture and style, and New Zealand’s leading niche account in this space.</p>
+          <h3 class="text-xl font-semibold mb-2 brown">Miles</h3>
+          <p class="text-gray-600 mb-4">Founder of @milesrunclub, exploring the intersection of running culture and style.</p>
         </div>
       </div>
-
       <!-- Huffer -->
       <div class="bg-white rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition transform overflow-hidden relative">
-        <img src="images/huffer.jpg" alt="Huffer" 
-             class="w-full aspect-square object-cover transform transition duration-300 hover:scale-105" loading="lazy">
+        <img src="images/huffer.jpg" alt="Huffer" class="w-full aspect-square object-cover transform transition duration-300 hover:scale-105" loading="lazy">
         <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">Huffer</h3>
-          <p class="text-gray-600 mb-4">Managed online sales across NZ & AU and paid ad campaigns across Meta, driving awareness and conversions throughout 2023.</p>
+          <h3 class="text-xl font-semibold mb-2 brown">Huffer</h3>
+          <p class="text-gray-600 mb-4">Managed online sales across NZ & AU and paid ad campaigns across Meta in 2023.</p>
         </div>
       </div>
-
       <!-- Sunglass Style -->
       <div class="bg-white rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition transform overflow-hidden relative">
-        <img src="images/sunglass-style.jpg" alt="Sunglass Style" 
-             class="w-full aspect-square object-cover transform transition duration-300 hover:scale-105" loading="lazy">
+        <img src="images/sunglass-style.jpg" alt="Sunglass Style" class="w-full aspect-square object-cover transform transition duration-300 hover:scale-105" loading="lazy">
         <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">Sunglass Style</h3>
-          <p class="text-gray-600 mb-4">Led digital strategy and creative execution both online and in-store between 2018-2022.</p>
+          <h3 class="text-xl font-semibold mb-2 brown">Sunglass Style</h3>
+          <p class="text-gray-600 mb-4">Led digital strategy and creative execution online and in-store between 2018-2022.</p>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="max-w-3xl mx-auto px-6 py-20 text-center">
-    <h2 class="text-3xl font-bold mb-6">Let’s Work Together</h2>
+  <section id="contact" class="max-w-3xl mx-auto px-6 py-20 text-center" data-aos="fade-up" data-aos-delay="300">
+    <h2 class="text-3xl font-bold mb-6 forest-green">Let’s Work Together</h2>
     <p class="text-lg text-gray-700 mb-8 leading-relaxed">I’m available for freelance projects, collaborations, or consulting. Get in touch and let’s talk about how I can help your business grow.</p>
-    <a href="mailto:andrew_p_jones@hotmail.com" class="px-6 py-3 bg-black text-white rounded-full text-lg hover:bg-gray-800 transition transform hover:scale-105">
+    <a href="mailto:andrew_p_jones@hotmail.com" class="px-6 py-3 bg-brown text-white rounded-full text-lg hover:bg-forest-green transition transform hover:scale-105">
       Email Me
     </a>
   </section>
@@ -127,5 +117,13 @@
   <footer class="bg-gray-900 text-gray-400 text-center py-6 text-sm">
     © 2025 Andrew Day-Jones
   </footer>
+
+  <!-- AOS Init -->
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  </script>
 </body>
 </html>
