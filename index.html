@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Freelance marketing and design services by Andrew Day-Jones. Helping small businesses in New Zealand with marketing strategy, social media, ads, and brand design." />
   <title>Andrew - Marketing & Brand/Content Design</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -17,7 +18,7 @@
   <section id="home" class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden">
     
     <!-- Live Date/Time (top-center) -->
-    <div id="datetime" class="absolute top-10 left-1/2 transform -translate-x-1/2 text-sm md:text-base text-gray-700 font-medium"></div>
+    <div id="datetime" class="absolute top-10 left-1/2 transform -translate-x-1/2 text-sm md:text-base text-gray-700 font-medium" aria-live="polite"></div>
 
     <!-- Subtle black overlay for depth -->
     <div class="absolute inset-0 bg-black/10 md:bg-black/15 -z-10"></div>
@@ -26,11 +27,11 @@
       Andrew Day-Jones
     </h1>
     <p class="text-base sm:text-lg md:text-xl text-gray-700 mb-6 sm:mb-8 leading-relaxed max-w-xl">
-      Digital Marketing & Brand/Content Design Services – Based In Auckland, New Zealand.
+      Digital Marketing & Brand/Content Design Services – Based in Auckland, New Zealand.
     </p>
 
     <!-- Scroll Indicator -->
-    <a href="#about" class="absolute bottom-6 text-gray-700 hover:text-black transition">
+    <a href="#about" class="absolute bottom-6 text-gray-700 hover:text-black transition" aria-label="Scroll down to About section">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 animate-bounce mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
       </svg>
@@ -38,94 +39,125 @@
   </section>
 
   <!-- How I Help Section -->
-<section id="how-i-help" class="bg-white py-16 px-6">
-  <div class="max-w-4xl mx-auto text-center">
-    <h2 class="text-2xl sm:text-3xl font-bold mb-6 text-black">Helping Small Businesses Grow</h2>
-    <p class="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
-      Most small businesses don’t need a big agency — they just need someone who gets it. I work with owner-operated and small-team businesses as an extra set 
-      of hands to handle the marketing you don’t have time for. Whether it’s building a strategy, running ads, or giving your brand a fresh look online, I make 
-      it simple and affordable. Think of me as your part-time marketing partner. Focused on what matters and tailored to what you actually need.
-    </p>
-  </div>
-</section>
-
-<!-- About Section -->
-<section id="about" class="max-w-4xl mx-auto px-6 py-16">
-  <h2 class="text-2xl sm:text-3xl font-bold mb-6 text-center md:text-left text-black">About Me</h2>
-  <div class="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed space-y-6">
-    <p class="border-l-4 border-black pl-4">
-      With over 7 years in the digital marketing and design field, I’ve worked across New Zealand’s retail landscape, 
-      including brands like <span class="font-semibold">Huffer</span> and <span class="font-semibold">Sunglass Style</span>.
-      My focus is crafting marketing strategies for local businesses that drive results while pairing them with engaging content and storytelling. 
-      I’m into working with good people who enjoy what they do.
-    </p>
-    <p class="border-l-4 border-black pl-4"> 
-      After a life-changing two years as a stay-at-home dad, I’m now freelancing from Devonport, Auckland, with a fresh 
-      perspective and sharpened design instincts from carefully watching the digital landscape change by the day. I believe the ability to 
-      authentically connect with your audience is what truly cuts through.
-    </p>
-    <p class="border-l-4 border-black pl-4">
-      I’m also the founder of 
-      <a href="https://www.instagram.com/milesrunclub/" target="_blank" class="font-semibold text-black hover:text-gray-700 hover:underline transition">
-        @milesrunclub
-      </a>, a platform that explores the intersection of running culture and style, and New Zealand’s leading niche account in this space.
-       This is paired with a custom-built e-commerce store, selling casual running wear in limited releases to a growing, worldwide community.
-    </p>
-  </div>
-</section>
-
-  <!-- Skills Section -->
-<section id="skills" class="bg-white py-16">
-  <div class="max-w-5xl mx-auto px-6">
-    <h2 class="text-2xl sm:text-3xl font-bold mb-10 text-center text-black">Services/Offerings</h2>
-    <div class="grid md:grid-cols-3 gap-10">
-      <div class="p-6 bg-gray-100 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition transform">
-        <h3 class="text-lg sm:text-xl font-semibold mb-2 text-black">Marketing Strategy</h3>
-        <p class="text-sm sm:text-base text-gray-600">Building campaigns that connect with audiences and deliver measurable impact.</p>
-      </div>
-      <div class="p-6 bg-gray-100 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition transform">
-        <h3 class="text-lg sm:text-xl font-semibold mb-2 text-black">Social Media & Ads</h3>
-        <p class="text-sm sm:text-base text-gray-600">From organic growth to paid campaigns, I help brands excel in a crowded online space.</p>
-      </div>
-      <div class="p-6 bg-gray-100 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition transform">
-        <h3 class="text-lg sm:text-xl font-semibold mb-2 text-black">Graphic & Web Design</h3>
-        <p class="text-sm sm:text-base text-gray-600">Mixing creativity and functionality to craft visually engaging, user-friendly experiences 
-          that bring brands to life on and offline.</p>
-      </div>
-    </div>
-
-    <!-- How I Work Paragraph -->
-    <div class="mt-12 text-center">
-      <p class="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        Every project starts with a relaxed chat to understand your goals. From there, I’ll put together a simple plan 
-        that balances strategy with creativity. Whether that’s building a campaign, refreshing your brand visuals, 
-        or growing your online presence. My aim is always to keep things clear, collaborative, and focused on results.
+  <section id="how-i-help" class="bg-white py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-6 text-black">Helping Small Businesses Grow</h2>
+      <p class="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+        Most small businesses don’t need a big agency — they just need someone who gets it. I work with owner-operated and small-team businesses as an extra set 
+        of hands to handle the marketing you don’t have time for. Whether it’s building a strategy, running ads, or giving your brand a fresh look online, I make 
+        it simple and affordable. Think of me as your part-time marketing partner. Focused on what matters and tailored to what you actually need.
       </p>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- Projects Section --> <section id="projects" class="max-w-6xl mx-auto px-6 py-20"> <h2 class="text-2xl sm:text-3xl font-bold mb-12 text-center text-black">Some Of My Work</h2> <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"> <!-- Miles --> <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden relative"> <img src="images/miles.jpg" alt="Miles Run Club" class="w-full aspect-square object-cover transform transition duration-300 hover:scale-105" loading="lazy"> <div class="p-6"> <h3 class="text-lg sm:text-xl font-semibold mb-2 text-black">Miles</h3> <p class="text-sm sm:text-base text-gray-600 mb-4">Founded this platform in 2020, which explores the evolving culture of running through a fashion-forward lens. Paired with custom e-com store selling to a worldwide audience.</p> </div> </div> <!-- Huffer --> <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden relative"> <img src="images/huffer.jpg" alt="Huffer" class="w-full aspect-square object-cover transform transition duration-300 hover:scale-105" loading="lazy"> <div class="p-6"> <h3 class="text-lg sm:text-xl font-semibold mb-2 text-black">Huffer</h3> <p class="text-sm sm:text-base text-gray-600 mb-4">Managed online sales (+65% year-on-year growth) across NZ & AU and paid ad campaigns across Meta, driving brand awareness and conversions throughout 2023.</p> </div> </div> <!-- Sunglass Style --> <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden relative"> <img src="images/sunglass-style.jpg" alt="Sunglass Style" class="w-full aspect-square object-cover transform transition duration-300 hover:scale-105" loading="lazy"> <div class="p-6"> <h3 class="text-lg sm:text-xl font-semibold mb-2 text-black">Sunglass Style</h3> <p class="text-sm sm:text-base text-gray-600 mb-4">Led the digital strategy and nationwide, in-store creative execution between 2018-2022. Working with leading eyewear brands such as Celine & Tom Ford.</p> </div> </div> </div> </section>
+  <!-- About Section -->
+  <section id="about" class="max-w-4xl mx-auto px-6 py-16">
+    <h2 class="text-2xl sm:text-3xl font-bold mb-6 text-center md:text-left text-black">About Me</h2>
+    <div class="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed space-y-6">
+      <p class="border-l-4 border-black pl-4">
+        With over 7 years in the digital marketing and design field, I’ve worked across New Zealand’s retail landscape, 
+        including brands like <span class="font-semibold">Huffer</span> and <span class="font-semibold">Sunglass Style</span>.
+        My focus is crafting marketing strategies for local businesses that drive results while pairing them with engaging content and storytelling. 
+        I’m into working with good people who enjoy what they do.
+      </p>
+      <p class="border-l-4 border-black pl-4"> 
+        After a life-changing two years as a stay-at-home dad, I’m now freelancing from Devonport, Auckland, with a fresh 
+        perspective and sharpened design instincts from carefully watching the digital landscape change by the day. I believe the ability to 
+        authentically connect with your audience is what truly cuts through.
+      </p>
+      <p class="border-l-4 border-black pl-4">
+        I’m also the founder of 
+        <a href="https://www.instagram.com/milesrunclub/" target="_blank" rel="noopener noreferrer" class="font-semibold text-black hover:text-gray-700 hover:underline transition">
+          @milesrunclub
+        </a>, a platform that explores the intersection of running culture and style, and New Zealand’s leading niche account in this space.
+        This is paired with a custom-built e-commerce store, selling casual running wear in limited releases to a growing, worldwide community.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="bg-white py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-10 text-center text-black">Services / Offerings</h2>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="p-6 bg-gray-100 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition transform">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-black">Marketing Strategy</h3>
+          <p class="text-sm sm:text-base text-gray-600">Building campaigns that connect with audiences and deliver measurable impact.</p>
+        </div>
+        <div class="p-6 bg-gray-100 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition transform">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-black">Social Media & Ads</h3>
+          <p class="text-sm sm:text-base text-gray-600">From organic growth to paid campaigns, I help brands excel in a crowded online space.</p>
+        </div>
+        <div class="p-6 bg-gray-100 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition transform">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-black">Graphic & Web Design</h3>
+          <p class="text-sm sm:text-base text-gray-600">Mixing creativity and functionality to craft visually engaging, user-friendly experiences 
+            that bring brands to life on and offline.</p>
+        </div>
+      </div>
+
+      <!-- How I Work Paragraph -->
+      <div class="mt-12 text-center">
+        <p class="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+          Every project starts with a relaxed chat to understand your goals. From there, I’ll put together a simple plan 
+          that balances strategy with creativity — whether that’s building a campaign, refreshing your brand visuals, 
+          or growing your online presence. My aim is always to keep things clear, collaborative, and focused on results.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="max-w-6xl mx-auto px-6 py-20">
+    <h2 class="text-2xl sm:text-3xl font-bold mb-12 text-center text-black">Some Of My Work</h2>
+    <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+      <!-- Miles -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden relative">
+        <img src="images/miles.jpg" alt="Miles Run Club project preview" class="w-full aspect-square object-cover transform transition duration-300 hover:scale-105" loading="lazy">
+        <div class="p-6">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-black">Miles</h3>
+          <p class="text-sm sm:text-base text-gray-600 mb-4">Founded this platform in 2020, which explores the evolving culture of running through a fashion-forward lens. Paired with custom e-com store selling to a worldwide audience.</p>
+        </div>
+      </div>
+
+      <!-- Huffer -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden relative">
+        <img src="images/huffer.jpg" alt="Huffer project preview" class="w-full aspect-square object-cover transform transition duration-300 hover:scale-105" loading="lazy">
+        <div class="p-6">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-black">Huffer</h3>
+          <p class="text-sm sm:text-base text-gray-600 mb-4">Managed online sales (+65% year-on-year growth) across NZ & AU and paid ad campaigns across Meta, driving brand awareness and conversions throughout 2023.</p>
+        </div>
+      </div>
+
+      <!-- Sunglass Style -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden relative">
+        <img src="images/sunglass-style.jpg" alt="Sunglass Style project preview" class="w-full aspect-square object-cover transform transition duration-300 hover:scale-105" loading="lazy">
+        <div class="p-6">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-black">Sunglass Style</h3>
+          <p class="text-sm sm:text-base text-gray-600 mb-4">Led the digital strategy and nationwide, in-store creative execution between 2018-2022. Working with leading eyewear brands such as Celine & Tom Ford.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact Section -->
   <section id="contact" class="max-w-3xl mx-auto px-6 py-20 text-center">
     <h2 class="text-2xl sm:text-3xl font-bold mb-6 text-black">Curious about how I can support your business?</h2>
     <p class="text-base sm:text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">
-     Let’s have a chat to share ideas and explore the best way to grow your brand. I'm currently available for projects in a limited capacity.
+      Let’s have a chat to share ideas and explore the best way to grow your brand. I'm currently available for projects in a limited capacity.
     </p>
     <a href="mailto:andrew_p_jones@hotmail.com" class="px-6 py-3 bg-black text-white rounded-full text-base sm:text-lg hover:opacity-90 transition transform hover:scale-105">
       Get in touch today 👋
     </a>
   </section>
 
-    <!-- Footer -->
+  <!-- Footer -->
   <footer class="bg-gray-900 text-gray-400 text-center py-6 text-xs sm:text-sm">
     <div class="flex justify-center space-x-6 mb-3">
-      <!-- Instagram -->
-      <a href="https://www.instagram.com/andrew.dayjones/" target="_blank" class="hover:text-white transition">
+      <a href="https://www.instagram.com/andrew.dayjones/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition" aria-label="Visit my Instagram">
         <i class="fab fa-instagram text-lg sm:text-xl"></i>
       </a>
-      <!-- LinkedIn -->
-      <a href="https://www.linkedin.com/in/andrewday-jones/" target="_blank" class="hover:text-white transition">
+      <a href="https://www.linkedin.com/in/andrewday-jones/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition" aria-label="Visit my LinkedIn">
         <i class="fab fa-linkedin text-lg sm:text-xl"></i>
       </a>
     </div>
@@ -137,20 +169,20 @@
 
   <!-- Date/Time Script -->
   <script>
-  function updateDateTime() {
-    const now = new Date();
-    const options = { 
-      year: 'numeric', 
-      month: 'short', 
-      day: 'numeric', 
-      hour: '2-digit', 
-      minute: '2-digit', 
-      second: '2-digit' 
-    };
-    document.getElementById('datetime').textContent = now.toLocaleString('en-NZ', options);
-  }
-  setInterval(updateDateTime, 1000);
-  updateDateTime();
-</script>
+    function updateDateTime() {
+      const now = new Date();
+      const options = { 
+        year: 'numeric', 
+        month: 'short', 
+        day: 'numeric', 
+        hour: '2-digit', 
+        minute: '2-digit',
+        second: '2-digit'
+      };
+      document.getElementById('datetime').textContent = now.toLocaleString('en-NZ', options);
+    }
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+  </script>
 </body>
 </html>
