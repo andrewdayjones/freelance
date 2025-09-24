@@ -15,28 +15,25 @@
 <body class="bg-gray-50 text-gray-900 font-sans">
 
   <!-- Hero Section -->
-  <section id="home" class="relative bg-black min-h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden">
-    
-    <!-- Live Date/Time (top-center) -->
-    <div id="datetime" class="absolute top-10 left-1/2 transform -translate-x-1/2 text-sm md:text-base text-white font-medium" aria-live="polite"></div>
+<section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden bg-gradient-to-b from-black via-gray-900 to-black text-white">
+  
+  <!-- Live Clock -->
+  <div id="datetime" class="absolute top-10 left-1/2 transform -translate-x-1/2 text-sm md:text-base font-mono"></div>
 
-    <!-- Subtle black overlay for depth -->
-    <div class="absolute inset-0 bg-black/10 md:bg-black/15 -z-10"></div>
-    
-    <h1 class="text-2xl sm:text-4xl md:text-6xl font-bold mb-3 sm:mb-4 mt-8 sm:mt-10 md:mt-16 text-white">
-      Andrew Day-Jones
-    </h1>
-    <p class="text-base sm:text-lg md:text-xl text-white mb-6 sm:mb-8 leading-relaxed max-w-xl">
-      Digital Marketing & Brand/Content Design Services – Based in Auckland, New Zealand.
-    </p>
+  <h1 class="text-2xl sm:text-4xl md:text-6xl font-bold mb-4">
+    Andrew Day-Jones
+  </h1>
+  <p class="text-base sm:text-lg md:text-xl max-w-xl leading-relaxed">
+    Digital Marketing & Brand/Content Design Services – Based In Auckland, New Zealand.
+  </p>
 
-    <!-- Scroll Indicator -->
-    <a href="#about" class="absolute bottom-6 text-white hover:text-black transition" aria-label="Scroll down to About section">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 animate-bounce mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-      </svg>
-    </a>
-  </section>
+  <!-- Scroll Indicator -->
+  <a href="#about" class="absolute bottom-6 text-gray-300 hover:text-white transition">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 animate-bounce mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  </a>
+</section>
 
   <!-- How I Help Section -->
   <section id="how-i-help" class="bg-white py-16 px-6">
