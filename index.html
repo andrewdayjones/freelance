@@ -4,184 +4,854 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Freelance marketing and design services by Andrew Day-Jones. Helping small businesses in New Zealand with marketing strategy, social media, ads, and brand design." />
-  <title>Andrew - Marketing & Brand/Content Design</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Andrew Day-Jones — Marketing & Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    html {
-      scroll-behavior: smooth;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #f5f3ef;
+      --cream: #ede9e1;
+      --warm-mid: #b8aa97;
+      --accent: #c8a96e;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: var(--sans);
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 3rem;
+      mix-blend-mode: difference;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: white;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: white;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 0.5; }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      background: var(--black);
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: 0 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(200,169,110,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: 3rem;
+      padding-top: 8rem;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-name {
+      font-family: var(--serif);
+      font-size: clamp(4.5rem, 12vw, 11rem);
+      font-weight: 300;
+      line-height: 0.9;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 2rem 0 3rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .hero-tagline {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--warm-mid);
+      max-width: 28ch;
+      line-height: 1.6;
+    }
+
+    .hero-scroll {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--warm-mid);
+      text-decoration: none;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .hero-scroll:hover { color: var(--accent); }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: var(--warm-mid);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.2); }
+    }
+
+    #datetime {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.2);
+    }
+
+    /* ─── INTRO ─── */
+    .intro {
+      background: var(--cream);
+      padding: 7rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .intro-label {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--warm-mid);
+      padding-top: 0.4rem;
+    }
+
+    .intro-text {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--black);
+    }
+
+    .intro-text strong {
+      font-weight: 600;
+    }
+
+    /* ─── STATS ─── */
+    .stats {
+      background: var(--black);
+      padding: 5rem 3rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+    }
+
+    .stat {
+      padding: 3rem 2.5rem;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .stat:last-child { border-right: none; }
+
+    .stat-number {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 300;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+
+    .stat-label {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      color: var(--warm-mid);
+      line-height: 1.5;
+    }
+
+    /* ─── SERVICES ─── */
+    .services {
+      padding: 7rem 3rem;
+      background: var(--white);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4rem;
+      border-bottom: 1px solid var(--cream);
+      padding-bottom: 1.5rem;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 300;
+    }
+
+    .section-count {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--warm-mid);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    .service-item {
+      padding: 3rem 2.5rem 3rem 0;
+      border-right: 1px solid var(--cream);
+      padding-right: 2.5rem;
+    }
+
+    .service-item:last-child { border-right: none; padding-right: 0; }
+    .service-item:not(:first-child) { padding-left: 2.5rem; }
+
+    .service-num {
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .service-name {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .service-desc {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* ─── ABOUT ─── */
+    .about {
+      background: var(--cream);
+      padding: 7rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .about-left {}
+
+    .about-heading {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+    }
+
+    .about-heading em { font-style: italic; color: var(--accent); }
+
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #555;
+      margin-top: 2rem;
+    }
+
+    .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #5a9a6e;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    .about-right {}
+
+    .about-para {
+      font-family: var(--sans);
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: #3a3a3a;
+      margin-bottom: 1.75rem;
+    }
+
+    .about-para:last-child { margin-bottom: 0; }
+
+    .about-para a {
+      color: var(--black);
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+
+    .about-para a:hover { color: var(--accent); }
+
+    /* ─── WORK ─── */
+    .work {
+      padding: 7rem 3rem;
+      background: var(--white);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 0;
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      background: var(--cream);
+    }
+
+    .project-img-wrap {
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      background: #d5cfc5;
+      position: relative;
+    }
+
+    .project-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .project-card:hover .project-img-wrap img {
+      transform: scale(1.06);
+    }
+
+    /* Placeholder for missing images */
+    .project-img-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #d5cfc5 0%, #b8aa97 100%);
+      z-index: 0;
+    }
+
+    .project-img-wrap img { position: relative; z-index: 1; }
+
+    .project-info {
+      padding: 1.5rem 1.5rem 2rem;
+    }
+
+    .project-tag {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--warm-mid);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-name {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-desc {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: #666;
+      line-height: 1.65;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 1rem;
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--black);
+      text-decoration: none;
+      font-weight: 500;
+      transition: gap 0.2s;
+    }
+
+    .project-link:hover { gap: 0.7rem; }
+    .project-link::after { content: '→'; }
+
+    /* ─── PROCESS ─── */
+    .process {
+      background: var(--black);
+      padding: 7rem 3rem;
+    }
+
+    .process .section-title { color: var(--white); }
+    .process .section-count { color: var(--warm-mid); }
+    .process .section-header { border-color: rgba(255,255,255,0.1); }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    .process-step {
+      padding: 3rem 2.5rem 3rem 0;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .process-step:last-child { border-right: none; padding-right: 0; }
+    .process-step:not(:first-child) { padding-left: 2.5rem; }
+
+    .step-num {
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .step-title {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .step-desc {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--warm-mid);
+      line-height: 1.7;
+    }
+
+    /* ─── CONTACT ─── */
+    .contact {
+      background: var(--cream);
+      padding: 8rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .contact-heading {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+    }
+
+    .contact-heading em { font-style: italic; color: var(--accent); }
+
+    .contact-right {}
+
+    .contact-desc {
+      font-family: var(--sans);
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-cta {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.2s;
+    }
+
+    .contact-cta:hover {
+      background: var(--accent);
+      color: var(--black);
+      transform: translateY(-2px);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--black);
+      color: var(--warm-mid);
+      padding: 2.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 300;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-links a {
+      color: var(--warm-mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--accent); }
+
+    /* ─── ANIMATIONS ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero { padding: 0 1.5rem; }
+      .intro { grid-template-columns: 1fr; gap: 1.5rem; padding: 4rem 1.5rem; }
+      .stats { grid-template-columns: 1fr; }
+      .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 2rem 1.5rem; }
+      .services { padding: 4rem 1.5rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-item { border-right: none; border-bottom: 1px solid var(--cream); padding: 2rem 0 !important; }
+      .about { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 1.5rem; }
+      .work { padding: 4rem 1.5rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .process { padding: 4rem 1.5rem; }
+      .process-steps { grid-template-columns: 1fr; }
+      .process-step { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 2rem 0 !important; }
+      .contact { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 1.5rem; }
+      footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.5rem; }
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
+<body>
 
-  <!-- Hero Section -->
-<section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden bg-black text-white">
-  
-  <!-- Live Clock -->
-  <div id="datetime" class="absolute top-10 left-1/2 transform -translate-x-1/2 text-xs sm:text-sm md:text-base font-mono"></div>
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">ADJ</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 sm:mb-4 mt-8 sm:mt-10 md:mt-16 text-white">
-  Andrew Day-Jones
-  </h1>
-  <p class="text-base sm:text-lg md:text-xl max-w-xl leading-relaxed">
-    Digital Marketing & Brand/Content Design Services – Based In Auckland, New Zealand.
-  </p>
-
-  <!-- Scroll Indicator -->
-  <a href="#about" class="absolute bottom-6 text-gray-300 hover:text-white transition">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 animate-bounce mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-    </svg>
-  </a>
-</section>
-
-  <!-- How I Help Section -->
-  <section id="how-i-help" class="bg-white py-16 px-6">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-2xl sm:text-3xl font-bold mb-6 text-black">Helping Small Businesses Grow</h2>
-      <p class="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
-        Small businesses don’t need a big agency... they just need someone who gets it. I work with owner-operated and small-team businesses as an extra set 
-        of hands to handle the marketing you don’t have time for. Whether it’s building a strategy, running ads, or giving your brand a fresh look online, I make 
-        it simple and affordable. Think of me as your part-time marketing partner. Focused on what matters and tailored to what you actually need.
-      </p>
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Marketing & Brand Design — Auckland, NZ</p>
+      <h1 class="hero-name">Andrew<br><em>Day-Jones</em></h1>
     </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="max-w-4xl mx-auto px-6 py-16">
-    <h2 class="text-2xl sm:text-3xl font-bold mb-6 text-center md:text-left text-black">About Me</h2>
-    <div class="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed space-y-6">
-      <p class="border-l-4 border-black pl-4">
-        With over 7 years in the digital marketing and design field, I’ve worked across New Zealand’s retail landscape, 
-        including brands like <span class="font-semibold">Huffer</span> and <span class="font-semibold">Sunglass Style</span>.
-        My focus is crafting marketing strategies for local businesses that drive results while pairing them with engaging content and storytelling. 
-        I’m into working with good people who enjoy what they do.
-      </p>
-      <p class="border-l-4 border-black pl-4"> 
-        After an awesome two years as a stay-at-home dad, I’m now freelancing from Devonport, Auckland, with a fresh 
-        perspective and sharpened design instincts from carefully watching the digital landscape change by the day. I believe the ability to 
-        authentically connect with your audience is what truly cuts through.
-      </p>
-      <p class="border-l-4 border-black pl-4">
-        I’m also the founder of 
-        <a href="https://www.instagram.com/milesrunclub/" target="_blank" rel="noopener noreferrer" class="font-semibold text-black hover:text-gray-700 hover:underline transition">
-          @milesrunclub
-        </a>, a platform that explores the intersection of running culture and style, and New Zealand’s leading niche account in this space.
-        This is paired with a custom-built e-commerce store, selling running-inspired merchandise in limited releases to a growing, worldwide community.
-      </p>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills" class="bg-white py-16">
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-2xl sm:text-3xl font-bold mb-10 text-center text-black">Services / Offerings</h2>
-      <div class="grid md:grid-cols-3 gap-10">
-        <div class="p-6 bg-gray-100 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition transform">
-          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-black">Marketing Strategy</h3>
-          <p class="text-sm sm:text-base text-gray-600">Building campaigns that connect with audiences and deliver measurable impact.</p>
-        </div>
-        <div class="p-6 bg-gray-100 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition transform">
-          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-black">Social Content & Ads</h3>
-          <p class="text-sm sm:text-base text-gray-600">From organic growth to paid campaigns, I help brands excel in a crowded online space.</p>
-        </div>
-        <div class="p-6 bg-gray-100 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition transform">
-          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-black">Graphic & Web Design</h3>
-          <p class="text-sm sm:text-base text-gray-600">Mixing creativity and functionality to craft visually engaging, user-friendly experiences 
-            that bring brands to life on and offline.</p>
-        </div>
-      </div>
-
-      <!-- How I Work Paragraph -->
-      <div class="mt-12 text-center">
-        <p class="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-          Every project starts with a relaxed chat to understand your goals. From there, I’ll put together a simple plan 
-          that balances strategy with creativity — whether that’s building a campaign, refreshing your brand visuals, 
-          or growing your online presence. My aim is always to keep things clear, collaborative, and focused on results.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="max-w-6xl mx-auto px-6 py-20">
-    <h2 class="text-2xl sm:text-3xl font-bold mb-12 text-center text-black">Some Of My Work</h2>
-    <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-
-      <!-- Miles -->
-      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden relative">
-        <a href="https://www.milesrunclub.com" target="_blank" rel="noopener noreferrer">
-        <img src="images/miles.jpg" alt="Miles Run Club project preview" class="w-full aspect-square object-cover transform transition duration-300 hover:scale-105" loading="lazy">
+    <div class="hero-footer">
+      <p class="hero-tagline">Helping small businesses grow through strategy, content, and design that actually connects.</p>
+      <div style="text-align:right; display:flex; flex-direction:column; align-items:flex-end; gap:1rem;">
+        <div id="datetime"></div>
+        <a href="#services" class="hero-scroll">
+          <div class="scroll-line"></div>
+          Scroll
         </a>
-        <div class="p-6">
-          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-black">Miles</h3>
-          <p class="text-sm sm:text-base text-gray-600 mb-4">Founded this platform in 2020, which explores the evolving culture of running through a fashion-forward lens. Paired with custom e-com store selling to an international audience.</p>
-        </div>
-      </div>
-
-      <!-- Huffer -->
-      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden relative">
-        <img src="images/huffer.jpg" alt="Huffer project preview" class="w-full aspect-square object-cover transform transition duration-300 hover:scale-105" loading="lazy">
-        <div class="p-6">
-          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-black">Huffer</h3>
-          <p class="text-sm sm:text-base text-gray-600 mb-4">Managed online sales (70% year-on-year growth) across NZ & AU and paid ad campaigns across Meta, driving brand awareness and conversions throughout 2023.</p>
-        </div>
-      </div>
-
-      <!-- Sunglass Style -->
-      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden relative">
-        <img src="images/sunglass-style.jpg" alt="Sunglass Style project preview" class="w-full aspect-square object-cover transform transition duration-300 hover:scale-105" loading="lazy">
-        <div class="p-6">
-          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-black">Sunglass Style</h3>
-          <p class="text-sm sm:text-base text-gray-600 mb-4">Led the digital strategy and nationwide, in-store creative execution between 2018-2022. Working with leading eyewear brands such as Celine & Tom Ford.</p>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="max-w-3xl mx-auto px-6 py-20 text-center">
-    <h2 class="text-2xl sm:text-3xl font-bold mb-6 text-black">Curious about how I can support your business?</h2>
-    <p class="text-base sm:text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">
-      Let’s have a chat to share ideas and explore the best way to grow your brand. I'm currently available for projects in a limited capacity.
+  <!-- INTRO -->
+  <section class="intro" id="intro">
+    <p class="intro-label reveal">Philosophy</p>
+    <p class="intro-text reveal">
+      Small businesses don't need a big agency — they need <strong>someone who gets it.</strong> I work as a part-time marketing partner: hands-on, affordable, and focused on what actually moves the needle for your brand.
     </p>
-    <a href="mailto:andrew_p_jones@hotmail.com" class="px-6 py-3 bg-black text-white rounded-full text-base sm:text-lg hover:opacity-90 transition transform hover:scale-105">
-      Get in touch today 👋
-    </a>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-black text-white text-center py-6 text-xs sm:text-sm">
-    <div class="flex justify-center space-x-6 mb-3">
-      <a href="https://www.instagram.com/andrew.dayjones/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition" aria-label="Visit my Instagram">
-        <i class="fab fa-instagram text-lg sm:text-xl"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/andrewday-jones/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition" aria-label="Visit my LinkedIn">
-        <i class="fab fa-linkedin text-lg sm:text-xl"></i>
-      </a>
+  <!-- STATS -->
+  <section class="stats" id="stats">
+    <div class="stat reveal">
+      <div class="stat-number">7+</div>
+      <div class="stat-label">Years across digital marketing & design</div>
     </div>
-    © 2025 Andrew Day-Jones
+    <div class="stat reveal">
+      <div class="stat-number">70%</div>
+      <div class="stat-label">YoY online sales growth delivered for Huffer NZ & AU</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-number">NZ #1</div>
+      <div class="stat-label">Niche running culture & style account</div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-header reveal">
+      <h2 class="section-title">Services</h2>
+      <span class="section-count">03 offerings</span>
+    </div>
+    <div class="services-grid">
+      <div class="service-item reveal">
+        <div class="service-num">01</div>
+        <h3 class="service-name">Marketing Strategy</h3>
+        <p class="service-desc">Campaigns built around your audience, not a template. From channel selection to content planning and performance tracking — a clear roadmap tailored to where you want to go.</p>
+      </div>
+      <div class="service-item reveal">
+        <div class="service-num">02</div>
+        <h3 class="service-name">Social Content & Ads</h3>
+        <p class="service-desc">Organic growth and paid campaigns that work together. Meta ads, content calendars, and creative that cuts through a crowded feed and turns attention into action.</p>
+      </div>
+      <div class="service-item reveal">
+        <div class="service-num">03</div>
+        <h3 class="service-name">Graphic & Web Design</h3>
+        <p class="service-desc">Visual identities and web experiences that bring brands to life. From logo and brand assets through to website design — built to look great and work even harder.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-left reveal">
+      <h2 class="about-heading">Based in<br>Devon<em>port,</em><br>Auckland.</h2>
+      <div class="availability">
+        <span class="dot"></span>
+        Available for new projects
+      </div>
+    </div>
+    <div class="about-right">
+      <p class="about-para reveal">
+        With over 7 years across the digital marketing and design space, I've worked with leading New Zealand retail brands including Huffer and Sunglass Style — leading their digital strategy, paid media, and in-store creative from end to end.
+      </p>
+      <p class="about-para reveal">
+        After two years as a stay-at-home dad, I'm freelancing with a fresh perspective and sharpened instincts from watching the digital landscape evolve in real time. I believe the ability to authentically connect with your audience is what truly cuts through.
+      </p>
+      <p class="about-para reveal">
+        I'm also the founder of <a href="https://www.instagram.com/milesrunclub/" target="_blank" rel="noopener noreferrer">@milesrunclub</a> — New Zealand's leading running culture and style platform, paired with a custom e-commerce store selling limited-run merchandise to a growing worldwide community.
+      </p>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="work" id="work">
+    <div class="section-header reveal">
+      <h2 class="section-title">Selected Work</h2>
+      <span class="section-count">03 projects</span>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <a href="https://www.milesrunclub.com" target="_blank" rel="noopener noreferrer">
+          <div class="project-img-wrap">
+            <img src="images/miles.jpg" alt="Miles Run Club" loading="lazy">
+          </div>
+        </a>
+        <div class="project-info">
+          <p class="project-tag">Founded 2020 · Brand & E-commerce</p>
+          <h3 class="project-name">Miles Run Club</h3>
+          <p class="project-desc">Built from the ground up — platform strategy, brand identity, content direction, and a custom e-commerce store selling to an international audience. NZ's #1 niche running culture account.</p>
+          <a href="https://www.milesrunclub.com" class="project-link" target="_blank" rel="noopener noreferrer">Visit site</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-img-wrap">
+          <img src="images/huffer.jpg" alt="Huffer" loading="lazy">
+        </div>
+        <div class="project-info">
+          <p class="project-tag">2023 · Paid Media & E-commerce</p>
+          <h3 class="project-name">Huffer</h3>
+          <p class="project-desc">Managed online sales strategy across NZ & AU, delivering 70% year-on-year growth. Oversaw paid ad campaigns across Meta — driving brand awareness and direct conversions at scale.</p>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-img-wrap">
+          <img src="images/sunglass-style.jpg" alt="Sunglass Style" loading="lazy">
+        </div>
+        <div class="project-info">
+          <p class="project-tag">2018–2022 · Digital Strategy & Creative</p>
+          <h3 class="project-name">Sunglass Style</h3>
+          <p class="project-desc">Led digital strategy and nationwide in-store creative execution across a four-year tenure. Partnered with premium eyewear houses including Celine and Tom Ford.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <div class="section-header reveal">
+      <h2 class="section-title" style="color:var(--white)">How It Works</h2>
+      <span class="section-count">03 steps</span>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="step-num">01</div>
+        <h3 class="step-title">Relaxed Chat</h3>
+        <p class="step-desc">We start with a no-pressure conversation to understand your goals, your audience, and what's not working right now. No jargon, no pitch — just an honest look at the opportunity.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">02</div>
+        <h3 class="step-title">Clear Plan</h3>
+        <p class="step-desc">From that conversation I put together a focused proposal — what I'd tackle, how I'd approach it, and what success looks like. Simple, prioritised, and built around your budget.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">03</div>
+        <h3 class="step-title">Built Together</h3>
+        <p class="step-desc">We work collaboratively with regular check-ins and full transparency. You're never left wondering what's happening — and the output is always yours to keep and build on.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-left reveal">
+      <h2 class="contact-heading">Let's grow<br>your <em>brand</em><br>together.</h2>
+    </div>
+    <div class="contact-right reveal">
+      <p class="contact-desc">
+        I'm currently available for projects in a limited capacity. Whether you need a full strategy, a campaign, or just a second pair of eyes on what you're doing — reach out and let's have a chat.
+      </p>
+      <a href="mailto:andrew_p_jones@hotmail.com" class="contact-cta">Get in touch today ↗</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2025 Andrew Day-Jones</span>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/andrew.dayjones/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.linkedin.com/in/andrewday-jones/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="mailto:andrew_p_jones@hotmail.com">Email</a>
+    </div>
   </footer>
 
-  <!-- Font Awesome (for icons) -->
-  <script src="https://kit.fontawesome.com/c9580d62a9.js" crossorigin="anonymous"></script>
-
-  <!-- Date/Time Script -->
+  <!-- Scripts -->
   <script>
+    // Clock
     function updateDateTime() {
       const now = new Date();
-      const options = { 
-        year: 'numeric', 
-        month: 'short', 
-        day: 'numeric', 
-        hour: '2-digit', 
-        minute: '2-digit',
-        second: '2-digit'
-      };
-      document.getElementById('datetime').textContent = now.toLocaleString('en-NZ', options);
+      const options = { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      const el = document.getElementById('datetime');
+      if (el) el.textContent = now.toLocaleString('en-NZ', options);
     }
     setInterval(updateDateTime, 1000);
     updateDateTime();
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    reveals.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
