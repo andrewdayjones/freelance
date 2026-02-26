@@ -25,6 +25,7 @@
   <meta name="twitter:title" content="Andrew Day-Jones — Marketing & Brand Design">
   <meta name="twitter:description" content="Freelance marketing and brand design for small businesses in New Zealand.">
   <meta name="twitter:image" content="https://andrewday-jones.com/og-image.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -36,7 +37,7 @@
       --white: #f5f3ef;
       --cream: #ede9e1;
       --warm-mid: #b8aa97;
-      --accent: #c8a96e;
+      --accent: #7a8c72;
       --serif: 'Cormorant Garamond', Georgia, serif;
       --sans: 'DM Sans', sans-serif;
     }
@@ -51,7 +52,7 @@
       overflow-x: hidden;
     }
 
-    /* ─── NAV ─── */
+    /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -91,7 +92,7 @@
 
     .nav-links a:hover { opacity: 0.5; }
 
-    /* ─── HERO ─── */
+    /* HERO */
     .hero {
       min-height: 100vh;
       background: var(--black);
@@ -109,7 +110,7 @@
       right: -10%;
       width: 600px;
       height: 600px;
-      background: radial-gradient(circle, rgba(200,169,110,0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(122,140,114,0.07) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -196,7 +197,7 @@
       color: rgba(255,255,255,0.2);
     }
 
-    /* ─── INTRO ─── */
+    /* INTRO */
     .intro {
       background: var(--cream);
       padding: 7rem 3rem;
@@ -223,17 +224,14 @@
       color: var(--black);
     }
 
-    .intro-text strong {
-      font-weight: 600;
-    }
+    .intro-text strong { font-weight: 600; }
 
-    /* ─── STATS ─── */
+    /* STATS */
     .stats {
       background: var(--black);
       padding: 5rem 3rem;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
     }
 
     .stat {
@@ -261,7 +259,7 @@
       line-height: 1.5;
     }
 
-    /* ─── SERVICES ─── */
+    /* SERVICES */
     .services {
       padding: 7rem 3rem;
       background: var(--white);
@@ -293,13 +291,11 @@
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 0;
     }
 
     .service-item {
       padding: 3rem 2.5rem 3rem 0;
       border-right: 1px solid var(--cream);
-      padding-right: 2.5rem;
     }
 
     .service-item:last-child { border-right: none; padding-right: 0; }
@@ -329,7 +325,7 @@
       line-height: 1.7;
     }
 
-    /* ─── ABOUT ─── */
+    /* ABOUT */
     .about {
       background: var(--cream);
       padding: 7rem 3rem;
@@ -338,8 +334,6 @@
       gap: 6rem;
       align-items: start;
     }
-
-    .about-left {}
 
     .about-heading {
       font-family: var(--serif);
@@ -366,7 +360,7 @@
     .dot {
       width: 6px; height: 6px;
       border-radius: 50%;
-      background: #5a9a6e;
+      background: var(--accent);
       animation: pulse 2s ease-in-out infinite;
     }
 
@@ -374,8 +368,6 @@
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.5; transform: scale(0.8); }
     }
-
-    .about-right {}
 
     .about-para {
       font-family: var(--sans);
@@ -398,7 +390,7 @@
 
     .about-para a:hover { color: var(--accent); }
 
-    /* ─── WORK ─── */
+    /* WORK */
     .work {
       padding: 7rem 3rem;
       background: var(--white);
@@ -408,11 +400,9 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
-      margin-top: 0;
     }
 
     .project-card {
-      position: relative;
       overflow: hidden;
       background: var(--cream);
     }
@@ -424,19 +414,6 @@
       position: relative;
     }
 
-    .project-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    .project-card:hover .project-img-wrap img {
-      transform: scale(1.06);
-    }
-
-    /* Placeholder for missing images */
     .project-img-wrap::after {
       content: '';
       position: absolute;
@@ -445,11 +422,19 @@
       z-index: 0;
     }
 
-    .project-img-wrap img { position: relative; z-index: 1; }
-
-    .project-info {
-      padding: 1.5rem 1.5rem 2rem;
+    .project-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      position: relative;
+      z-index: 1;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
+
+    .project-card:hover .project-img-wrap img { transform: scale(1.06); }
+
+    .project-info { padding: 1.5rem 1.5rem 2rem; }
 
     .project-tag {
       font-family: var(--sans);
@@ -493,20 +478,18 @@
     .project-link:hover { gap: 0.7rem; }
     .project-link::after { content: '→'; }
 
-    /* ─── PROCESS ─── */
+    /* PROCESS */
     .process {
       background: var(--black);
       padding: 7rem 3rem;
     }
 
     .process .section-title { color: var(--white); }
-    .process .section-count { color: var(--warm-mid); }
     .process .section-header { border-color: rgba(255,255,255,0.1); }
 
     .process-steps {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 0;
     }
 
     .process-step {
@@ -541,7 +524,7 @@
       line-height: 1.7;
     }
 
-    /* ─── CONTACT ─── */
+    /* CONTACT */
     .contact {
       background: var(--cream);
       padding: 8rem 3rem;
@@ -559,8 +542,6 @@
     }
 
     .contact-heading em { font-style: italic; color: var(--accent); }
-
-    .contact-right {}
 
     .contact-desc {
       font-family: var(--sans);
@@ -587,11 +568,11 @@
 
     .contact-cta:hover {
       background: var(--accent);
-      color: var(--black);
+      color: var(--white);
       transform: translateY(-2px);
     }
 
-    /* ─── FOOTER ─── */
+    /* FOOTER */
     footer {
       background: var(--black);
       color: var(--warm-mid);
@@ -604,10 +585,7 @@
       font-weight: 300;
     }
 
-    .footer-links {
-      display: flex;
-      gap: 2rem;
-    }
+    .footer-links { display: flex; gap: 2rem; }
 
     .footer-links a {
       color: var(--warm-mid);
@@ -617,7 +595,7 @@
 
     .footer-links a:hover { color: var(--accent); }
 
-    /* ─── ANIMATIONS ─── */
+    /* ANIMATIONS */
     .reveal {
       opacity: 0;
       transform: translateY(28px);
@@ -629,7 +607,7 @@
       transform: translateY(0);
     }
 
-    /* ─── RESPONSIVE ─── */
+    /* RESPONSIVE */
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
@@ -803,7 +781,7 @@
   <!-- PROCESS -->
   <section class="process" id="process">
     <div class="section-header reveal">
-      <h2 class="section-title" style="color:var(--white)">How It Works</h2>
+      <h2 class="section-title">How It Works</h2>
       <span class="section-count">03 steps</span>
     </div>
     <div class="process-steps">
@@ -834,23 +812,21 @@
       <p class="contact-desc">
         I'm currently available for projects in a limited capacity. Whether you need a full strategy, a campaign, or just a second pair of eyes on what you're doing — reach out and let's have a chat.
       </p>
-      <a href="/cdn-cgi/l/email-protection#22434c465047557d527d484d4c4751624a4d564f434b4e0c414d4f" class="contact-cta">Get in touch today ↗</a>
+      <a href="mailto:andrew_p_jones@hotmail.com" class="contact-cta">Get in touch today ↗</a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <span>© 2025 Andrew Day-Jones</span>
+    <span>© 2026 Andrew Day-Jones</span>
     <div class="footer-links">
       <a href="https://www.instagram.com/andrew.dayjones/" target="_blank" rel="noopener noreferrer">Instagram</a>
       <a href="https://www.linkedin.com/in/andrewday-jones/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="/cdn-cgi/l/email-protection#bcddd2d8ced9cbe3cce3d6d3d2d9cffcd4d3c8d1ddd5d092dfd3d1">Email</a>
+      <a href="mailto:andrew_p_jones@hotmail.com">Email</a>
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // Clock
+  <script>
     function updateDateTime() {
       const now = new Date();
       const options = { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
@@ -860,9 +836,17 @@
     setInterval(updateDateTime, 1000);
     updateDateTime();
 
-    // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
-          setTimeout(() => entry.target
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
